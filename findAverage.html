@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>findAverage</title>
+</head>
+<body>
+<script>
+  let score = [10,50,25,98];
+
+  findAvg(score);
+
+  function findAvg (score) {
+    this.score = score;
+    let sum = 0;
+    let count = 0;
+
+    for(let i = 0; i < this.score.length; i++) {
+      sum += this.score[i]
+      count ++
+    }
+    let average = sum / count;
+    document.write("" + average);
+  }
+</script>
+</body>
+</html>

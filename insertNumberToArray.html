@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>insertNumberToArray</title>
+</head>
+<body>
+<script>
+  let array = [11, 15, 29, 30, 50];
+
+  insertNumberToArray(array, 10, 3);
+
+  function insertNumberToArray(array, number, index) {
+    this.array = array;
+    this.number = number;
+    this.index = index;
+
+      if(this.array[this.index] < 0 || this.index > this.array.length) {
+        console.log(this.array);
+      } else {
+          let newArray = [];
+          let stopCount = 0;
+          for (let j = 0; j <= this.array.length; j++) {
+              if (j < this.index) {
+                  newArray.push(this.array[j]);
+              } else if (j === this.index && j < this.array.length && stopCount === 0) {
+                  newArray.push(this.number);
+                  stopCount++;
+                  j--;
+              } else if (j < this.array.length) {
+                  newArray.push(this.array[j]);
+              } else if (j === this.index && j === this.array.length) {
+                  newArray.push(this.number);
+              }
+          }
+          console.log(newArray);
+      }
+    }
+</script>
+</body>
+</html>
